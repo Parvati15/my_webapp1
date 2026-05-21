@@ -1,7 +1,5 @@
 FROM python:3.10-slim
-WORKDIR /app
-COPY requirement.txt .
-RUN pip install --no-cache-dir -r requirement.txt
-COPY . .
-EXPOSE 5000
+WORKDIR /my_webapp
+COPY app.py .
+RUN pip install Flask
 CMD ["python3","app.py"]
